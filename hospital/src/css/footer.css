@@ -1,0 +1,25 @@
+.footer {
+         background-color:hsl(220, 52%, 21%);
+         color: white;
+         text-align: center;
+         padding: 20px;
+         
+         bottom: 0;
+         width: outer-width;
+         font-size: 14px;
+     }
+     .footer-content p {
+         margin: 5px 0;
+     }
+     .social-links {
+         margin-top: 10px;
+     }
+     .social-links a {
+         color: white;  /* لون الروابط أبيض */
+         text-decoration: none;  /* إزالة الخط تحت الروابط */
+         margin: 0 10px;  /* مسافة بين الروابط */
+         font-weight: bold;
+     }
+     .social-links a:hover {
+         color: #ddd;  /* لون فاتح عند التمرير */
+     }

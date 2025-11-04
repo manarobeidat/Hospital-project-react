@@ -1,0 +1,28 @@
+.navbar {
+  background-color:#1a2d52;
+  padding: 20px;
+  
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-list li a {
+  color: white;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 16px; 
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-list li a:hover {
+  color: #FFD6EC; /* لون فاتح عند المرور */
+  transform: scale(1.05); /* تكبير بسيط عند المرور */
+}

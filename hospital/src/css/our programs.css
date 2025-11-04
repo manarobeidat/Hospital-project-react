@@ -1,0 +1,88 @@
+
+/* our programs.css */
+
+.our-programs {
+    background: linear-gradient(135deg, #f0f4f8 0%, #e1e8ed 100%);
+    min-height: 100vh;
+    padding: 60px 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.our-programs .MuiTypography-h4 {
+    font-size: 3rem;
+    color: #2d3748;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.our-programs .MuiTypography-h4::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+.our-programs .MuiGrid-container {
+    margin-top: 20px;
+}
+
+.our-programs .MuiCard-root {
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    border: 1px solid #e2e8f0;
+}
+
+.our-programs .MuiCard-root:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.our-programs .MuiCardContent-root {
+    padding: 24px;
+    text-align: center;
+}
+
+.our-programs .MuiTypography-h6 {
+    font-size: 1.5rem;
+    color: #4c51bf;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.our-programs .MuiTypography-body2 {
+    font-size: 1rem;
+    color: #718096;
+    line-height: 1.6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .our-programs {
+        padding: 40px 10px;
+    }
+    
+    .our-programs .MuiTypography-h4 {
+        font-size: 2.5rem;
+    }
+    
+    .our-programs .MuiCardContent-root {
+        padding: 20px;
+    }
+    
+    .our-programs .MuiTypography-h6 {
+        font-size: 1.3rem;
+    }
+    
+    .our-programs .MuiTypography-body2 {
+        font-size: 0.9rem;
+    }
+}
