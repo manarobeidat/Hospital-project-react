@@ -17,7 +17,7 @@ Main page providing an overview of the hospital and its services.
 ### Contact Us
 Page for contacting the hospital.
 ![Contact Image 1](image-5.png)
-![Contact Image 2](image-6.png)
+![alt text](image-13.png)
 
 ### Our Doctors
 Showcase of hospital doctors and their expertise.
