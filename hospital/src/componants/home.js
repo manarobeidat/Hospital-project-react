@@ -1,50 +1,109 @@
 import '../css/home.css';
+// Add these imports for react-slick to work properly
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import hospitalImage from '../images/7-3.jpg';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
 import hospitalImage2 from '../hos/1.jpg';
 import hospitalImage3 from '../hos/2.jpg';
 import hospitalImage4 from '../hos/3.jpg';
-import hospitalImage5 from '../hos/4.jpg';
-import hospitalImage6 from '../hos/5.jpg';
 
-const itemData = [ 
-    {
-        name: "Patient Registration",
-        img: hospitalImage2,
-        desc: "Allows staff to register new patients by entering personal details such as full name, national ID, date of birth, contact information, and medical history. This creates a digital medical record for future reference."
-    },
-    {
-        name: "Appointment Scheduling",
-        img: hospitalImage3,
-        desc: "Enables patients to schedule appointments with doctors, view available time slots, and receive reminders for upcoming appointments."
-    },
-    {
-        name: "Medical Records Management",
-        img: hospitalImage4,
-        desc: "Facilitates the secure storage and retrieval of patient medical records, including past treatments, medications, and test results."
-    },
-    {
-        name: "Billing and Insurance",
-        img: hospitalImage5,
-        desc: "Streamlines the billing process by generating invoices, processing payments, and managing insurance claims."
-    },
-    {
-        name: "Telemedicine",
-        img: hospitalImage6,
-        desc: "Allows patients to consult with doctors remotely via video calls, making healthcare more accessible."
-    }
-];
+import React from "react";
+import Slider from "react-slick";
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import CardActionArea from '@mui/material/CardActionArea';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Image from 'react-bootstrap/Image';
+import Row from 'react-bootstrap/Row';
 
+function Card1 () {
+  return (
+    <Card sx={{ maxWidth: 345 }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="140"
+          image={hospitalImage4}
+          alt="Hospital Image 4"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Medical Records Management
+          </Typography>
+          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            Facilitates the secure storage and retrieval of patient medical records,
+             including past treatments, medications, and test results.
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+  );
+}
 
-export default function Home() {
-    //const [selectedItem, setSelectedItem] = useState(null);
+function Card2() {
+  return (
+    <Card sx={{ maxWidth: 345 }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="140"
+          image={hospitalImage3}
+          alt="Appointment Scheduling"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Appointment Scheduling
+          </Typography>
+          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            Enables patients to schedule appointments with doctors,
+            view available time slots, and receive reminders for upcoming appointments
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+  );
+}
 
-    //const handleReadMore = (item) => {
-        //setSelectedItem(item);
-        //alert(`Read more about ${item.name}: ${item.desc}`);
-   // };
+function Card3() {
+  return (
+    <Card sx={{ maxWidth: 345 }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="140"
+          image={hospitalImage2}
+          alt="Patient Registration"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Patient Registration
+          </Typography>
+          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+           Allows staff to register new patients by entering personal details such as full name, 
+            national ID, date of birth, contact information,
+            and medical history. This creates a digital medical record for future reference.
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+  );
+}
 
+function Home() {
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
+   
     return (
         <div className="home-container">
             <img src={hospitalImage} alt="Hospital" className="hospital-image" />
@@ -56,22 +115,99 @@ export default function Home() {
                 We provide our services with compassion and excellence.
             </p>
             <button className="learn-more-button">Learn More</button>
-              <h3>images hospital </h3>
-             <ImageList sx={{ width:900 , height : 900}} cols={3} rowHeight={164}>
-             {itemData.map((item) => (
-             <ImageListItem key={item.img}>
-              <img
-            srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-            src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-            alt={item.title}
-            loading="lazy"
-          />
-        </ImageListItem>
-      ))}
-       </ImageList>
-  
+            <div className="slider-container">
+              <Slider {...settings}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+                  <Card1 />
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+                  <Card2 />
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+                  <Card3 />
+                </div>
+              </Slider>
+            </div>
+            <div style={{
+              maxWidth: '500px',
+              margin: '50px auto',
+              padding: '20px',
+              borderRadius: '10px',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+              backgroundColor: '#f8f9fa'
+            }}>
+              <h2 style={{ textAlign: 'center', marginBottom: '20px', color: '#007bff' }}>Book an Appointment</h2>
+              <Form>
+                <Form.Group className="mb-3" controlId="formBasicName">
+                  <Form.Label>Name</Form.Label>
+                  <Form.Control 
+                    type="text" 
+                    placeholder="Enter your name" 
+                    style={{
+                      borderRadius: '5px',
+                      border: '1px solid #ced4da',
+                      padding: '10px'
+                    }}
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicId">
+                  <Form.Label>ID</Form.Label>
+                  <Form.Control 
+                    type="text" 
+                    placeholder="Enter your ID" 
+                    style={{
+                      borderRadius: '5px',
+                      border: '1px solid #ced4da',
+                      padding: '10px'
+                    }}
+                  />
+                </Form.Group>
 
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                  <Form.Check 
+                    type="checkbox" 
+                    label="Confirm Information" 
+                    style={{
+                      fontSize: '14px'
+                    }}
+                  />
+                </Form.Group>
+
+                <Button 
+                  variant="primary" 
+                  type="submit"
+                  style={{
+                    width: '100%',
+                    padding: '10px',
+                    borderRadius: '5px',
+                    fontSize: '16px'
+                  }}
+                >
+                  Book Appointment
+                </Button>
+              </Form>
+            </div>
             
-        </div>
+                <h2 style={{ textAlign: 'center', marginBottom: '20px', color: '#007bff' }}>Images Hospital</h2>
+<div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+  <Image
+    src="https://www.shutterstock.com/image-photo/black-surgeon-giving-instruction-medical-260nw-400845949.jpg"
+    rounded
+    style={{ width: '800px', height: '300px', objectFit: 'cover' }}
+  />
+  <Image
+    src="https://www.agingproject.uniupo.it/wp-content/uploads/2021/12/intentional-rounding--1080x675.jpg"
+    rounded
+    style={{ width: '800px', height: '300px', objectFit: 'cover' }}
+  />
+  <Image
+    src="https://trauma-news.com/wp-content/uploads/2018/10/Stanford-item-header-image.png"
+    rounded
+    style={{ width: '800px', height: '300px', objectFit: 'cover' }}
+      />
+       </div> 
+    </div> 
     );
 }
+
+export default Home;

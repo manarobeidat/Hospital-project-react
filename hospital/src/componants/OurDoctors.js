@@ -127,7 +127,7 @@ export default function OurDoctors() {
         <Box sx={{ width: '100%' }}>
           <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
             {doctors.map((doctor, index) => (
-              <Grid key={index} size={6}> {/* Consistent size for 2 cards per row */}
+              <Grid key={index} size={4}> {/* Consistent size for 2 cards per row */}
                 <Item>
                   <DoctorCard doctor={doctor} />
                 </Item>

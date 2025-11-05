@@ -1,88 +1,68 @@
-
 /* our programs.css */
 
-.our-programs {
-    background: linear-gradient(135deg, #f0f4f8 0%, #e1e8ed 100%);
-    min-height: 100vh;
-    padding: 60px 20px;
-    font-family: 'Roboto', sans-serif;
+.our-programs-container {
+  padding: 20px;
+  background-color: #f5f5f5; 
 }
 
-.our-programs .MuiTypography-h4 {
-    font-size: 3rem;
-    color: #2d3748;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 50px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
+.our-programs-banner {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-.our-programs .MuiTypography-h4::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
-    margin: 15px auto;
-    border-radius: 2px;
+.our-programs-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center; 
 }
 
-.our-programs .MuiGrid-container {
-    margin-top: 20px;
+.program-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.our-programs .MuiCard-root {
-    height: 100%;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: white;
-    border: 1px solid #e2e8f0;
+.program-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.our-programs .MuiCard-root:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+.program-card-media {
+  height: 140px;
+  object-fit: cover; 
 }
 
-.our-programs .MuiCardContent-root {
-    padding: 24px;
-    text-align: center;
+.program-card-title {
+  color: #483d8a; 
+  font-weight: bold;
 }
 
-.our-programs .MuiTypography-h6 {
-    font-size: 1.5rem;
-    color: #4c51bf;
-    font-weight: 600;
-    margin-bottom: 10px;
+.program-card-description {
+  color: #666;
 }
 
-.our-programs .MuiTypography-body2 {
-    font-size: 1rem;
-    color: #718096;
-    line-height: 1.6;
+.program-card-button {
+  color: #483d8a;
+  border-color: #483d8a;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .our-programs {
-        padding: 40px 10px;
-    }
-    
-    .our-programs .MuiTypography-h4 {
-        font-size: 2.5rem;
-    }
-    
-    .our-programs .MuiCardContent-root {
-        padding: 20px;
-    }
-    
-    .our-programs .MuiTypography-h6 {
-        font-size: 1.3rem;
-    }
-    
-    .our-programs .MuiTypography-body2 {
-        font-size: 0.9rem;
-    }
+.program-card-button:hover {
+  background-color: #483d8a;
+  color: white;
 }
+
+
+@media (max-width: 600px) {
+  .our-programs-container {
+    padding: 10px;
+  }
+  
+  .program-card-media {
+    height: 120px;
+  }
+}
+
